@@ -43,8 +43,8 @@ function App() {
 
       {page ? (
         <div
-          className={`container grid grid-cols-${
-            isgrid ? 4 : 2
+          className={`container grid ${
+            isgrid ? "grid-cols-4" : "grid-cols-2"
           } max-w-[1232px] mx-auto gap-5 `}
         >
           {products.map((el) => {
@@ -55,7 +55,11 @@ function App() {
                 } p-5 rounded shadow-2xl cursor-pointer`}
                 key={el.id}
               >
-                <img src={el.image} alt="" className="w-[200px] rounded h-50 object-contain m-4" />
+                <img
+                  src={el.image}
+                  alt=""
+                  className="w-[200px] rounded h-50 object-contain"
+                />
                 <ol>
                   <li>
                     <b>Name :</b> {el.title}
@@ -72,7 +76,11 @@ function App() {
           })}
         </div>
       ) : (
-        <div className={`card grid grid-cols-${isgrid ? 4 : 2} max-w-[1232px] mx-auto gap-5 `}>
+        <div
+          className={` grid ${
+            isgrid ? `grid-cols-4` : `grid-cols-2`
+          } max-w-[1232px] mx-auto gap-5 `}
+        >
           {products.map((el) => {
             return (
               <div
